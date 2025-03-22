@@ -26,7 +26,7 @@ type ShieldsEndpointResponse struct {
 	Label string `json:"label"`
 	// Message is required
 	Message string `json:"message"`
-	Color   string `json:"color"`
+	Color   string `json:"color,omitempty"`
 }
 
 //goland:noinspection GoUnusedExportedFunction called by Vercel
