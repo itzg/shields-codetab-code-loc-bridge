@@ -1,6 +1,7 @@
 module shields-codetab-code-loc-bridge
 
-go 1.24
+// Vercel only seems to support up to 1.23 at this time
+go 1.23
 
 require github.com/stretchr/testify v1.10.0
 
