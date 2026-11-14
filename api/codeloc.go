@@ -65,6 +65,11 @@ func CodeLoc(w http.ResponseWriter, r *http.Request) {
 		_, _ = w.Write([]byte("Error retrieving from code loc: " + err.Error()))
 		return
 	}
+	if resp.StatusCode != http.StatusOK {
+		w.WriteHeader(http.StatusBadGateway)
+		_, _ = w.Write([]byte("Error retrieving from code loc: " + resp.Status))
+		return
+	}
 
 	var entries []CodeLocResponseEntry
 
